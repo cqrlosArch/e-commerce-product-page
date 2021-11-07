@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Classic Cheesecake Recipe</h1>
+<h1 align="center">E-commerce product page</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://frontendmentor.io" target="_blank">Frontendmentor.io</a>.
@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://recipe-page.cqrlosarch.vercel.app/">
+    <a href="https://e-commerce-product-page-five.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/solutions/6oFB5CSJVGzlosBSF4a3">
+    <a href="https://www.frontendmentor.io/solutions/responsive-ecommerce-product-page-vanilla-js-and-sass-qWvwGJFjN">
       Solution
     </a>
     <span> | </span>
@@ -29,7 +29,6 @@
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
   - [Built With](#built-with)
-- [Features](#features)
 - [How To Use](#how-to-use)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
@@ -52,15 +51,6 @@
 - [Sass](https://sass-lang.com/)
 - [Gulp](https://gulpjs.com/)
 
-## Features
-
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
-This application/site was created as a submission to a [Frontendmentor](https://frontendmentor.io/challenges) challenge. The [challenge](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6) was to build an application to complete the following user stories:
-
-- [x] User story: This is a completed user stories
-- [ ] User story: This is a incompleted user stories
-- [ ] User story: This is a incompleted 2nd user stories
 
 ## How To Use
 
