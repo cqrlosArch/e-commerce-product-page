@@ -1,0 +1,11 @@
+@use '../utilities/mixins' as mx;
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include mx.point('md') {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,162 @@
+@use '../utilities/mixins' as mx;
+
+.navbar {
+  display: flex;
+  width: 190px;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+
+  @include mx.point('md') {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  &__menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateX(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+
+    @include mx.point('md') {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      opacity: 1;
+      visibility: visible;
+      margin-left: 3rem;
+      transform: translateX(0);
+    }
+  }
+
+  &__list {
+    padding-left: 1.3rem;
+    margin-top: 5rem;
+
+    @include mx.point('md') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    margin: 2rem 0;
+    cursor: pointer;
+    @include mx.point('md') {
+      margin: 0.7rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--black-opacity);
+    font-weight: 700;
+
+    @include mx.point('md') {
+      color: var(--dark-grayish-blue);
+      font-weight: 400;
+      &:hover{
+        padding-bottom: 2rem;
+        border-bottom: 3px solid var(--orange);
+      }
+      
+    }
+  }
+
+  &__menu--open {
+    position: fixed;
+    opacity: 1;
+    visibility: visible;
+    width: 250px;
+    transform: translateX(0);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background-color: var(--white);
+  }
+
+  &__logo {
+    width: 150px;
+    height: 30px;
+  }
+}
+
+.user {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__account {
+    width: 25px;
+    @include mx.point('md') {
+      width: 30px;
+    }
+  }
+  &__avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    &:hover {
+      border: 2px solid var(--orange);
+    }
+  }
+  &__amount {
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+    &--active {
+      visibility: visible;
+      opacity: 1;
+    }
+    &::after {
+      content: attr(data-amount);
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(10px, -14px);
+      border-radius: 50%;
+      background-color: var(--orange);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 25px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+    }
+  }
+  &__cart {
+    height: 25px;
+    width: 25px;
+    position: relative;
+  }
+}
+
+.toggle {
+  position: relative;
+  z-index: 3;
+  &__img {
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    @include mx.point('md') {
+      display: none;
+    }
+  }
+}

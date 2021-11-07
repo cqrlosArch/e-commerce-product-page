@@ -1,0 +1,144 @@
+@use '../utilities/mixins' as mx;
+.gallery-main {
+  position: relative;
+  width: 100%;
+  @include mx.point('md') {
+    padding: 1.5rem;
+  }
+}
+
+.slider-main,
+.slider-modal {
+  position: relative;
+  height: 350px;
+  @include mx.point('md') {
+    height: 400px;
+    margin-bottom: 2rem;
+  }
+
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+    object-fit: cover;
+    object-position: 50% 25%;
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include mx.point('md') {
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    @include mx.point('md') {
+      display: none;
+      &--active {
+        display: flex;
+      }
+    }
+
+    & a {
+      display: grid;
+      width: 45px;
+      height: 45px;
+      place-items: center;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: all 0.3s ease;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    & img {
+      display: block;
+      width: 0.8rem;
+      margin: 0.7rem;
+    }
+    & .next {
+      transform: translateX(5%);
+      @include mx.point('md') {
+        transform: translateX(65%);
+      }
+    }
+    & .prev {
+      transform: translateX(-5%);
+      @include mx.point('md') {
+        transform: translateX(-65%);
+      }
+    }
+  }
+}
+
+.thumbnail-main,
+.thumbnail-modal {
+  display: none;
+  @include mx.point('md') {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+  }
+  &__item {
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover{
+      filter: opacity(0.8);
+    }
+    &--active {
+      border: 2px solid var(--orange);
+      filter: opacity(0.8);
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+.gallery-modal {
+  position: absolute;
+  width: 40%;
+  top: 0;
+  left: 50%;
+  transform: translate(0, -150%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 10%);
+  }
+  &__close {
+    position: absolute;
+    z-index: 2;
+    background: url(../images/icon-close.svg) no-repeat center;
+    background-size: 100%;
+    width: 15px;
+    height: 15px;
+    top: -25px;
+    right: 0;
+    cursor: pointer;
+    &:hover {
+      filter: invert(100%) sepia() saturate(10000%) hue-rotate(30deg);
+    }
+  }
+}

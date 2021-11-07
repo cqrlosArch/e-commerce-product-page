@@ -1,0 +1,112 @@
+@use '../utilities/mixins' as mx;
+.product {
+  padding: 1.5em;
+  @include mx.point('md') {
+    padding: 4rem;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    @include mx.point('md') {
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    color: var(--orange);
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  &__subtitle {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    @include mx.point('md') {
+      font-size: 2.5rem;
+    }
+  }
+  &__text {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--dark-grayish-blue);
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    align-items: center;
+    justify-items: flex-start;
+    @include mx.point('md') {
+      grid-template-columns: 40% 80%;
+      grid-auto-rows: auto;
+      margin-bottom: 1rem;
+    }
+  }
+  &__price {
+    font-size: 2rem;
+    font-weight: 700;
+    @include mx.point('md') {
+      margin:0;
+    }
+  }
+  &__discount {
+    color: var(--orange);
+    font-weight: 700;
+    background-color: var(--pale-orange);
+    padding: 0.5rem 0.6rem;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  &__retail {
+    text-decoration: line-through;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--grayish-blue);
+    justify-self: flex-end;
+    @include mx.point('md') {
+      justify-self: flex-start;
+      margin:0;
+    }
+  }
+
+  &__add-to-cart {
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    color: var(--white);
+    padding: 1rem;
+    font-weight: 700;
+    appearance: none;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border: none;
+    background-color: var(--orange);
+    cursor: pointer;
+    box-shadow: 0px 14px 10px -4px var(--pale-orange);
+    &:hover {
+      opacity: 0.9;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      background: url('../images/icon-cart.svg') no-repeat;
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      filter: brightness(0) invert(1);
+      transform: translate(-40px, -50%);
+    }
+
+    @include mx.point('md') {
+      width: 50%;
+      margin: 0;
+    }
+  }
+}

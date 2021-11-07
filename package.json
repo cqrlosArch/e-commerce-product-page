@@ -1,0 +1,35 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:dev": "sass ./src/scss/styles.scss:./src/css/styles.min.css -w --style compressed",
+    "browserify:dev": "rimraf dist/js/bundle.min.js && browserify dist/js/bundle.min.js -o dist/js/bundle.min.js -t [ babelify --presets [ @babel/preset-env ] ]",
+    "prefix:dev": "postcss ./src/css/styles.min.css --replace --use autoprefixer",
+    "htmlmin":"html-minifier ./src/index.html --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o ./public/index.html",
+    "imagemin":"imagemin ./src/images/* --out-dir=public/images",
+    "build": "rimraf public && sass ./src/scss/styles.scss:./public/css/styles.min.css  --style compressed && yarn postcss ./public/css/styles.min.css --replace --use autoprefixer && yarn browserify ./src/js/bundle.min.js -o public/js/bundle.min.js -t [ babelify --presets [ @babel/preset-env ] ] && yarn htmlmin && yarn imagemin"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "autoprefixer": "^10.2.6",
+    "babel-preset-minify": "^0.5.1",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "html-minifier": "^4.0.0",
+    "imagemin-cli": "^7.0.0",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.32.12"
+  }
+}

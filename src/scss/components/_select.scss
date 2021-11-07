@@ -1,0 +1,41 @@
+@use '../utilities/mixins' as mx;
+.select{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: var(--light-grayish-blue);
+  border-radius: 5px;
+  @include mx.point('md') {
+    width: 40%;
+    float: left;
+    margin-right: 1rem;
+  }
+  &__amount{
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  &__button{
+    width:30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border: none;
+    background:none;
+    margin: 0 1rem;
+  
+    &--less{
+      justify-self: self-start;
+    }
+    &--plus{
+      justify-self: self-end;
+    }
+    & img{
+      max-width: 15px;
+      max-height: 15px;
+      cursor: pointer;
+      display: block;
+      margin:.5rem 0;
+    }
+  }
+}
