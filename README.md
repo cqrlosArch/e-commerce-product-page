@@ -46,10 +46,8 @@
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [Workflow Gulp @cqrlosArch](https://github.com/cqrlosArch/workflow-gulp)
-- [Pug](https://pugjs.org/api/getting-started.html)
+- [Workflow-CLI @cqrlosArch](https://github.com/cqrlosArch/cli-workflow)
 - [Sass](https://sass-lang.com/)
-- [Gulp](https://gulpjs.com/)
 
 
 ## How To Use
@@ -58,13 +56,16 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/cqrlosArch/recipe-page
+$ git clone https://github.com/cqrlosArch/e-commerce-product-page
 
 # Install dependencies
 $ yarn install or npm install
 
 # Run the app
-$ yarn dev or npm run dev
+$ yarn sass:dev or npm run sass:dev
+
+# Build the app
+$ yarn build or npm run build
 ```
 
 ## Acknowledgements
